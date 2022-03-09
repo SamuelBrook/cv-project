@@ -1,0 +1,32 @@
+#container {
+  margin: 24px;
+}
+
+#header {
+  font-size: xx-large;
+}
+
+form {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  gap: 16px;
+  margin-top: 24px;
+}
+
+#button-container {
+  align-self: center;
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+}
+
+#submit,
+#add {
+  font-size: large;
+  width: 104px;
+  height: 32px;
+  margin-top: 24px;
+  align-self: center;
+}
