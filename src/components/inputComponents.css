@@ -1,9 +1,16 @@
 #container {
   margin: 24px;
+  display: flex;
+  gap: 40px;
 }
 
 #header {
   font-size: xx-large;
+}
+
+#inner-container {
+  display: flex;
+  gap: 80px;
 }
 
 form {
@@ -28,5 +35,9 @@ form {
   width: 104px;
   height: 32px;
   margin-top: 24px;
+  align-self: center;
+}
+
+#inputInfo {
   align-self: center;
 }
