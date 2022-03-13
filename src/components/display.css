@@ -1,0 +1,24 @@
+#cv-container {
+  width: "210mm";
+  min-height: "297mm";
+  margin-left: auto;
+  margin-right: auto;
+  background-color: hsl(0, 0%, 100%);
+}
+
+#header {
+  display: flex;
+  flex-direction: row;
+  gap: 80px;
+  /* width: 100vw; */
+}
+
+#personal-details {
+  margin-left: auto;
+  font-size: large;
+}
+
+#skills,
+#responsibilities {
+  font-style: italic;
+}

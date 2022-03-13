@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import Personal from "./components/personal";
 import Education from "./components/education";
 import Work from "./components/work";
+import Display from "./components/display";
+import uniqid from "uniqid";
 
 class App extends Component {
   constructor() {
@@ -31,9 +33,13 @@ class App extends Component {
       this.setState({
         currentPage: "education",
       });
-    } else {
+    } else if (this.state.currentPage === "education") {
       this.setState({
         currentPage: "work",
+      });
+    } else if (this.state.currentPage === "work") {
+      this.setState({
+        currentPage: "display",
       });
     }
   };
@@ -51,6 +57,7 @@ class App extends Component {
         qualification: qualificationInput.value,
         grade: gradeInput.value,
         skills: skillsInput.value,
+        id: uniqid(),
       };
 
       this.setState({
@@ -69,6 +76,7 @@ class App extends Component {
         job: jobInput.value,
         responsibilities: responsibilitiesInput.value,
         skills: skillsInput.value,
+        id: uniqid(),
       };
 
       this.setState({
@@ -94,14 +102,12 @@ class App extends Component {
           phoneNumber: telephoneInput.value,
         },
       });
-    } else {
-      this.addInput(e);
     }
-    console.log(this.state);
     this.switchPage();
   };
 
   render() {
+    const { personal } = this.state;
     return (
       <div id="container">
         {this.state.currentPage === "personal" && (
@@ -119,6 +125,16 @@ class App extends Component {
             onSubmit={this.submitInput}
             onAdd={this.addInput}
             inputNumber={this.state.work.length}
+          />
+        )}
+        {this.state.currentPage === "display" && (
+          <Display
+            name={personal.name}
+            email={personal.email}
+            address={personal.address}
+            number={personal.phoneNumber}
+            work={this.state.work}
+            education={this.state.education}
           />
         )}
       </div>

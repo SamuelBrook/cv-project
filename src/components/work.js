@@ -6,8 +6,6 @@ class Work extends Component {
     super();
   }
 
-  addNew = (e) => {};
-
   render() {
     return (
       <div>
@@ -38,12 +36,12 @@ class Work extends Component {
                     id="submit"
                     type="submit"
                   >
-                    Submit
+                    Finish
                   </button>
                 </div>
               </form>
               <div id="inputInfo">
-                {"Number of qualifications added:"}
+                {"Number of qualifications added: "}
                 {this.props.inputNumber}
               </div>
             </div>
